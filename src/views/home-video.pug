@@ -10,10 +10,16 @@ html(lang="en")
     header
       h1 Zoom Clone
     main
-      div#myStream
-        video#myFace(autoplay, playsinline, width="400", height="400")
-        button#mute Mute 
-        button#camera Turn Camera Off
-        select#cameras
+      div#welcome
+        form
+          input(type="text", required, placeholder="room name")
+          button Enter room
+      div#call
+        div#myStream
+          video#myFace(autoplay, playsinline, width="400", height="400")
+          button#mute Mute 
+          button#camera Turn Camera Off
+          select#cameras
+        video#peersStream(autoplay, playsinline, width="400", height="400")
     script(src="/socket.io/socket.io.js")
     script(src="/public/js/app-video.js")
